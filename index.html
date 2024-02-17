@@ -15,13 +15,17 @@
 				clicks++;
 				number += 1 / clicks;
 				// convert to fixed then back to number to round without having trailing zeroes
-				document.getElementById("number").textContent = +number.toFixed(5);
+				document.getElementById("number").innerHTML = `${+number.toFixed(5)}<br>+1/${clicks + 1}`;
+				if (number >= 10) document.getElementById("outer").style.display = "none";
 			}
 		</script>
 	</head>
 	<body style="overflow: hidden;">
-		<div style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;" onclick="clickToTen();">
-			<div id="number" style="position: relative; top: 40vh; text-align: center; user-select: none;">0</div>
+		<div id="outer" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;" onclick="clickToTen();">
+			<div id="number" style="position: relative; top: 40vh; text-align: center; user-select: none;">
+				0<br>
+				+1
+			</div>
 		</div>
 	</body>
 </html>
