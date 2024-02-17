@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Click to ten: harmonic series version</title>
+		<style>
+			html {
+				background-color: #808080;
+				font-family: sans-serif;
+			}
+		</style>
+		<script>
+			let number = 0;
+			let clicks = 0;
+			function clickToTen() {
+				clicks++;
+				number += 1 / clicks;
+				// convert to fixed then back to number to round without having trailing zeroes
+				document.getElementById("number").textContent = +number.toFixed(5);
+			}
+		</script>
+	</head>
+	<body style="overflow: hidden;">
+		<div style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;" onclick="clickToTen();">
+			<div id="number" style="position: relative; top: 40vh; text-align: center; user-select: none;">0</div>
+		</div>
+	</body>
+</html>
